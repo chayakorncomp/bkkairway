@@ -1,4 +1,5 @@
 defmodule BkkAirway.Venues.Airport do
+  @derive Jason.Encoder
   @enforce_keys [:id, :name, :code, :province, :country]
   defstruct [:id, :name, :code, :province, :country]
 

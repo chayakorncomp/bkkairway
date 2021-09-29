@@ -1,4 +1,5 @@
 defmodule BkkAirway.Materials.Flight do
+  @derive Jason.Encoder
   @enforce_keys [:id, :flight_code, :origin, :departure, :schedule, :aircraft]
   defstruct [:id, :flight_code, :origin, :departure, :schedule, :aircraft]
 

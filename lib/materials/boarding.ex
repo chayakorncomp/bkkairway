@@ -1,4 +1,5 @@
 defmodule BkkAirway.Materials.Boarding do
+  @derive Jason.Encoder
   @enforce_keys [:id, :booking_no, :pessenger, :seat_number]
   defstruct [:id, :booking_no, :pessenger, :seat_number]
 

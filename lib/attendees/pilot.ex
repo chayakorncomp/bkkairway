@@ -1,4 +1,5 @@
 defmodule BkkAirway.Attendees.Pilot do
+  @derive Jason.Encoder
   @enforce_keys [:id, :name, :position, :flight]
   defstruct [:id, :name, :position, :flight]
 

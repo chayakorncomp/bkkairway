@@ -1,4 +1,5 @@
 defmodule BkkAirway.Attendees.Pessenger do
+  @derive Jason.Encoder
   @enforce_keys [:id, :name, :age, :passport_number]
   defstruct [:id, :name, :age, :passport_number]
 

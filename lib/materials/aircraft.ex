@@ -1,4 +1,5 @@
 defmodule BkkAirway.Materials.Aircraft do
+  @derive Jason.Encoder
   @enforce_keys [:id, :code, :manufacturer, :model]
   defstruct [:id, :code, :manufacturer, :model]
 
