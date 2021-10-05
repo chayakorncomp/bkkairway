@@ -17,4 +17,9 @@ defmodule BkkAirway.Venues do
     to: Airport.Store,
     as: :get
 
+  defdelegate update_airpot(airport, params), to: Airport.Store,
+    as: :update
+
+  defdelegate delete_airpot(id), to: Airport.Store,
+    as: :delete
 end

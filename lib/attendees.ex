@@ -12,6 +12,10 @@ defmodule BkkAirway.Attendees do
     to: CabinCrew.Store,
     as: :add
 
+  defdelegate delete_cabincrew(id), to: CabinCrew.Store, as: :delete
+
+  defdelegate update_cabincrew(crew, params), to: CabinCrew.Store, as: :update
+
   defdelegate all_cabincrews(),
     to: CabinCrew.Store,
     as: :all
@@ -23,6 +27,11 @@ defmodule BkkAirway.Attendees do
   defdelegate new_pessenger(pessenger),
     to: Pessenger,
     as: :new
+
+  defdelegate delete_pessenger(id), to: Pessenger.Store, as: :delete
+
+  defdelegate update_pessenger(pessenger, params), to: Pessenger.Store,
+  as: :update
 
   defdelegate add_pessenger(pessenger),
     to: Pessenger.Store,
@@ -43,6 +52,12 @@ defmodule BkkAirway.Attendees do
   defdelegate add_pilot(pilot),
     to: Pilot.Store,
     as: :add
+
+  defdelegate update_pilot(pilot, params), to: Pilot.Store,
+    as: :update
+
+  defdelegate delete_pilot(id), to: Pilot.Store,
+    as: :delete
 
   defdelegate all_pilots(),
     to: Pilot.Store,
