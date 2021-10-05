@@ -1,7 +1,7 @@
 defmodule BkkAirway.Attendees.Pilot do
   @derive Jason.Encoder
-  @enforce_keys [:id, :name, :position, :flight]
-  defstruct [:id, :name, :position, :flight]
+  @enforce_keys [:id, :name, :position ]
+  defstruct [:id, :name, :position]
 
   defmodule Store do
     use BkkAirway.Storage.Base
@@ -10,7 +10,6 @@ defmodule BkkAirway.Attendees.Pilot do
   def new(flight, %{name: name, position: position}) do
     %__MODULE__{
       id: UUID.uuid4(),
-      flight: flight,
       name: name,
       position: position
     }

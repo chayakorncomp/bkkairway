@@ -12,7 +12,7 @@ defmodule BkkAirway.Materials.Aircraft do
       id: UUID.uuid4(),
       code: code,
       manufacturer: manufacturer,
-      model: model
+      model: model,
     }
   end
 end

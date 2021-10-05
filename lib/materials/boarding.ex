@@ -2,7 +2,7 @@ defmodule BkkAirway.Materials.Boarding do
   @derive Jason.Encoder
   @enforce_keys [:id, :booking_no, :pessenger, :seat_number]
   defstruct [:id, :booking_no, :pessenger, :seat_number]
-
+  alias BkkAirway.Storage.Association
   defmodule Store do
     use BkkAirway.Storage.Base
   end
@@ -10,7 +10,7 @@ defmodule BkkAirway.Materials.Boarding do
   def new(pessenger, %{booking_no: booking_no, seat_number: seat_number}) do
     %__MODULE__{
       id: UUID.uuid4(),
-      pessenger: pessenger,
+      pessenger: Association.new(pessenger),
       booking_no: booking_no,
       seat_number: seat_number
     }

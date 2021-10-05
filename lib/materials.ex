@@ -34,6 +34,10 @@ defmodule BkkAirway.Materials do
     to: Aircraft.Store,
     as: :all
 
+  defdelegate update_aircraft(aircarft, params), to: Aircraft.Store, as: :update
+
+  defdelegate delete_aircraft(id), to: Aircraft.Store, as: :delete
+
   defdelegate get_aircraft(id),
     to: Aircraft.Store,
     as: :get
@@ -45,6 +49,12 @@ defmodule BkkAirway.Materials do
   defdelegate add_booking(booking),
     to: Booking.Store,
     as: :add
+
+  defdelegate update_booking(booking, params),
+    to: Booking.Store,
+    as: :update
+
+  defdelegate delete_booking(id), to: Booking.Store, as: :delete
 
   defdelegate all_bookings(),
     to: Booking.Store,
@@ -62,6 +72,10 @@ defmodule BkkAirway.Materials do
     to: Boarding.Store,
     as: :add
 
+  defdelegate update_boarding(boarding, params), to: Boarding.Store, as: :update
+
+  defdelegate delete_boarding(id), to: Boarding.Store, as: :delete
+
   defdelegate all_boardings(),
     to: Boarding.Store,
     as: :all
@@ -73,6 +87,10 @@ defmodule BkkAirway.Materials do
   defdelegate new_flight(flight, airport, airport, schdule, aircraft),
     to: Flight,
     as: :new
+
+  defdelegate delete_flight(id), to: Flight.Store, as: :delete
+
+  defdelegate update_fligt(flight, params), to: Flight.Store, as: :update
 
   defdelegate add_flight(flight),
     to: Flight.Store,
