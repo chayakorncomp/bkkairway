@@ -3,6 +3,7 @@ defmodule BkkAirway.Materials.Aircraft do
   @enforce_keys [:id, :code, :manufacturer, :model]
   defstruct [:id, :code, :manufacturer, :model]
 
+
   defmodule Store do
     use BkkAirway.Storage.Base
   end

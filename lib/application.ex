@@ -13,8 +13,9 @@ defmodule BkkAirway.Application do
       BkkAirway.Materials.Flight.Store,
       BkkAirway.Attendees.CabinCrew.Store,
       BkkAirway.Attendees.Pessenger.Store,
-      BkkAirway.Attendees.Pilot.Store
+      BkkAirway.Attendees.Pilot.Store,
       # Starts a worker by calling: Skool.Worker.start_link(arg)
+      {Plug.Cowboy, scheme: :http, plug: BkkAirway.Router, port: 4040}
       # {Skool.Worker, arg}
     ]
 

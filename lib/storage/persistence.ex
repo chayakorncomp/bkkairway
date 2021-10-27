@@ -15,14 +15,14 @@ defmodule BkkAirway.Storage.Persistence do
     |> case do
       {:ok, content} ->
         content
-        |> Jason.decode!()
-        |> Enum.map(fn param ->
-          param
-          |> Enum.map(fn {key, value} ->
-            {String.to_existing_atom(key), value}
-          end)
-          |> Enum.into(%{})
-        end)
+        |> Jason.decode!(keys: :atoms)
+        # |> Enum.map(fn param ->
+        #   param
+        #   |> Enum.map(fn {key, value} ->
+        #     {String.to_existing_atom(key), value}
+        #   end)
+        #   |> Enum.into(%{})
+        # end)
         |> Enum.map(fn item ->
           struct(module_struct, item)
         end)

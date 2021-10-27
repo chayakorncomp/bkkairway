@@ -10,6 +10,10 @@ defmodule BkkAirway.Materials do
     to: Scheduler,
     as: :new
 
+    defdelegate search_aircraft(query),
+    to: Aircraft.Store,
+    as: :search
+
   defdelegate add_schedule(airport),
     to: Scheduler.Store,
     as: :add
